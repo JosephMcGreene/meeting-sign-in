@@ -1,0 +1,81 @@
+@use "../abstracts/index" as *;
+
+.form {
+  @include flex(column);
+  width: fit-content;
+  margin: 0.5rem auto;
+
+  .name-and-email {
+    @include flex(column);
+    max-width: fit-content;
+    margin: 0.25rem auto;
+
+    input {
+      @include border;
+      padding: $padding;
+
+      &:focus {
+        @include onFocus();
+      }
+    }
+  }
+
+  .rating {
+    @include flex(column);
+    margin-top: 0.75rem;
+
+    .rating-select {
+      @include border();
+      margin-top: 0.2rem;
+      padding: $padding;
+
+      option {
+        text-align: center;
+      }
+
+      &:focus {
+        @include onFocus();
+      }
+    }
+
+    .textarea {
+      @include border();
+      padding: $padding;
+
+      &:focus {
+        @include onFocus();
+      }
+    }
+  }
+
+  .submit-btn {
+    width: min-content;
+    margin: 1rem auto;
+    padding: 0.65rem 2rem;
+    background-color: $advizot-color;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:focus {
+      @include onFocus();
+    }
+  }
+
+  .error {
+    width: fit-content;
+    margin-top: 1px;
+    padding: 0.25rem;
+    background-color: $advizot-color;
+    clip-path: polygon(
+      0 13%,
+      8% 13%,
+      12% 0,
+      16% 13%,
+      100% 13%,
+      100% 98%,
+      0 98%
+    );
+  }
+}
