@@ -6,8 +6,8 @@ export default function Body({ responses }) {
 					<Row
 						key={responses.indexOf(cell)}
 						name={cell.name}
-						personal={cell.personal}
 						business={cell.business}
+						personal={cell.personal}
 						relationships={cell.relationships}
 					/>
 				);
@@ -21,8 +21,8 @@ function Row({ name, personal, business, relationships }) {
 	return (
 		<tr className="tbody-row">
 			<td className="tbody-cell">{name}</td>
-			<td className="tbody-cell">{personal}</td>
 			<td className="tbody-cell">{business}</td>
+			<td className="tbody-cell">{personal}</td>
 			<td className="tbody-cell">{relationships}</td>
 			<td className="tbody-cell">[Something]</td>
 			<td className="tbody-cell">[Something]</td>
