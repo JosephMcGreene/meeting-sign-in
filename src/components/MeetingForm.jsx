@@ -1,5 +1,4 @@
 // import editPencil from "../img/pencil-alt-solid.svg";
-import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
@@ -94,9 +93,6 @@ export default function MeetingForm({ onSubmit }) {
 					</button>
 				</Form>
 			</Formik>
-			<Link to="/responses" className="link">
-				Go to Responses
-			</Link>
 		</>
 	);
 }

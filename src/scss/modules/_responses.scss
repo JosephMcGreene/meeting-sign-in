@@ -1,3 +1,24 @@
+@use "../abstracts/index" as *;
+
+.responses-ul {
+	.response-li {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		text-align: center;
+		margin-bottom: 5vh;
+
+		.response-p {
+			padding: 0 2vw 7px;
+
+			strong {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 .modal {
 	position: fixed;
 	left: 0;
@@ -11,18 +32,12 @@
 	justify-content: center;
 
 	.modal-content {
-		width: 500px;
 		background-color: #fff;
-		margin-left: 2vw;
-		margin-right: 2vw;
+		padding: $padding 15px;
 
 		.modal-header,
 		.modal-footer {
 			padding: 10px;
-		}
-
-		.modal-title {
-			margin: 0;
 		}
 
 		.modal-body {

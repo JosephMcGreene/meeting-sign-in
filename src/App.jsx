@@ -6,32 +6,33 @@
 // TODO    - Add modals so Kevin can edit the form each month
 // TODO (3) Add a Back-End
 
-import { Routes, Route } from "react-router-dom";
-
 import { useState } from "react";
 
 import MeetingForm from "./components/MeetingForm";
-// import Modal from "./components/Modal";
-import ResponseTable from "./components/responses-table/ResponseTable";
+import ResponsesModal from "./components/ResponsesModal";
 import "./scss/App.scss";
 
 export default function App() {
 	const [responses, setResponses] = useState([]);
+	const [showResponses, setShowResponses] = useState(false);
 
 	function addResponse(response) {
 		setResponses([...responses, response]);
 	}
 
+	function closeResponses() {
+		setShowResponses(false);
+	}
+
 	return (
-		<Routes>
-			<Route
-				path="/meeting-sign-in"
-				element={<MeetingForm onSubmit={addResponse} />}
+		<div className="App">
+			<MeetingForm onSubmit={addResponse} />
+			<button onClick={() => setShowResponses(true)}>Show Responses</button>
+			<ResponsesModal
+				responses={responses}
+				showResponses={showResponses}
+				onClose={closeResponses}
 			/>
-			<Route
-				path="/responses"
-				element={<ResponseTable responses={responses} />}
-			/>
-		</Routes>
+		</div>
 	);
 }
