@@ -4,10 +4,10 @@ export default function ResponsesModal({ responses, showResponses, onClose }) {
 	}
 
 	return (
-		<div className="modal" onClick={() => onClose()}>
+		<div className="modal">
 			<div className="modal-content">
 				<div className="modal-header" onClick={() => onClose()}>
-					&times;
+					<button className="close-btn">&times;</button>
 				</div>
 				<ul className="responses-ul modal-body">
 					{responses.map((response) => {
@@ -41,7 +41,7 @@ export default function ResponsesModal({ responses, showResponses, onClose }) {
 					})}
 				</ul>
 				<div className="modal-footer">
-					<button className="submit-btn" onClick={() => onClose()}>
+					<button className="btn" onClick={() => onClose()}>
 						Close
 					</button>
 				</div>

@@ -33,7 +33,7 @@ export default function MeetingForm({ onSubmit }) {
 				})}
 				onSubmit={(values, actions) => {
 					setTimeout(() => {
-						alert(JSON.stringify(values, null, 2));
+						// alert(JSON.stringify(values, null, 2));
 						onSubmit(values);
 						actions.setSubmitting(false);
 					});
@@ -88,7 +88,7 @@ export default function MeetingForm({ onSubmit }) {
 						type="textarea"
 						className="rating"
 					/>
-					<button type="submit" className="submit-btn">
+					<button type="submit" className="btn">
 						Submit
 					</button>
 				</Form>

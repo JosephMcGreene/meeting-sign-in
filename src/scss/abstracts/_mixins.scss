@@ -5,8 +5,12 @@
 	flex-direction: $direction;
 }
 
-@mixin border() {
+@mixin border-radius() {
 	border-radius: var.$border-radius 0 var.$border-radius 0;
+}
+
+@mixin border() {
+	@include border-radius();
 	border-top: 1px solid black;
 	border-right: 3px solid black;
 	border-left: 3px solid black;

@@ -27,7 +27,12 @@ export default function App() {
 	return (
 		<div className="App">
 			<MeetingForm onSubmit={addResponse} />
-			<button onClick={() => setShowResponses(true)}>Show Responses</button>
+			<button
+				className="btn show-responses-btn"
+				onClick={() => setShowResponses(true)}
+			>
+				Show Responses
+			</button>
 			<ResponsesModal
 				responses={responses}
 				showResponses={showResponses}

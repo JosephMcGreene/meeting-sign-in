@@ -32,18 +32,34 @@
 	justify-content: center;
 
 	.modal-content {
+		border-radius: $border-radius 0 $border-radius 0;
 		background-color: #fff;
-		padding: $padding 15px;
+		margin: auto 1.5vw;
 
-		.modal-header,
-		.modal-footer {
-			padding: 10px;
+		.modal-header {
+			.close-btn {
+				display: block;
+				margin-left: auto;
+				margin-right: 7px;
+				background-color: transparent;
+				border-color: transparent;
+				border-radius: $border-radius 0 $border-radius 0;
+				font-size: 2rem;
+
+				&:focus {
+					@include onFocus();
+				}
+			}
 		}
 
 		.modal-body {
-			padding: 10px;
+			padding: 10px 0;
 			border-top: 1px solid #eee;
 			border-bottom: 1px solid #eee;
+		}
+
+		.modal-footer {
+			text-align: center;
 		}
 	}
 }

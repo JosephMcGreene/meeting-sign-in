@@ -47,21 +47,6 @@
 		}
 	}
 
-	.submit-btn {
-		width: min-content;
-		margin: 1rem auto;
-		padding: 0.65rem 2rem;
-		background-color: $advizot-color;
-		border: none;
-		border-radius: 8px;
-		cursor: pointer;
-		font-weight: bold;
-
-		&:focus {
-			@include onFocus();
-		}
-	}
-
 	.error {
 		width: fit-content;
 		margin-top: 1px;
