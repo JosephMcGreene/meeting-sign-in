@@ -1,11 +1,18 @@
+import { Link } from "react-router-dom";
+
 import Body from "./Body";
 
 export default function ResponseTable({ responses }) {
 	return (
-		<table className="table">
-			<Head />
-			<Body responses={responses} />
-		</table>
+		<>
+			<table className="table">
+				<Head />
+				<Body responses={responses} />
+			</table>
+			<Link to="/meeting-sign-in" className="link">
+				Go to Questions
+			</Link>
+		</>
 	);
 }
 

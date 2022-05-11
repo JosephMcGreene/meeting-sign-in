@@ -94,7 +94,9 @@ export default function MeetingForm({ onSubmit }) {
 					</button>
 				</Form>
 			</Formik>
-			<Link to="/responses">Go to Responses</Link>
+			<Link to="/responses" className="link">
+				Go to Responses
+			</Link>
 		</>
 	);
 }
