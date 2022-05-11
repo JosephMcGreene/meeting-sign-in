@@ -20,6 +20,7 @@
 		"web-vitals": "^2.1.4",
 		"yup": "^0.32.11"
 	},
+	"homepage": "https://josephmcgreene.github.io/meeting-sign-in",
 	"scripts": {
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build",
