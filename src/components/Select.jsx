@@ -1,10 +1,11 @@
+//External
 import { useField } from "formik";
 
-export default function Select({ label, ...props }) {
+export default function Select({ label, className, ...props }) {
 	const [field, meta] = useField(props);
 
 	return (
-		<div className="rating">
+		<div className={className}>
 			<label htmlFor={props.id || props.name}>{label}</label>
 			<select {...field} {...props} className="rating-select" />
 			{meta.touched && meta.error ? (

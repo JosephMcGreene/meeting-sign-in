@@ -18,6 +18,5 @@
 }
 
 @mixin onFocus() {
-	border: 4px solid var.$advizot-color;
-	box-shadow: 0 0 12px var.$advizot-color;
+	box-shadow: 0 0 12px var.$advizot-color, inset 0 0 8px var.$advizot-color;
 }

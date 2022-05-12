@@ -2,12 +2,20 @@
 // !    - Easy and Fast to use
 // !    - Secure Server Sign-In
 // !    - Answers to sign-in questions to be used during the course of the meeting via a projector
-// TODO (2) Add 4th and 5th questions to form (see past iterations of this project)
+// TODO (1) Add 4th and 5th questions to form (see past iterations of this project)
 // TODO    - Add modals so Kevin can edit the form each month
-// TODO (3) Add a Back-End
+// TODO (2) Clean up UX:
+// TODO 	 - Add confirmation that form submitted
+// TODO 	 - Stop user from submitting more than once
+// TODO 	 - Add some animations(?)
+// TODO 	 - Highlight names on the responses list in some way
+// TODO (3) Add a Back-End or some other way to have data persist
 
+//React
 import { useState } from "react";
 
+//Internal
+import Header from "./components/Header";
 import MeetingForm from "./components/MeetingForm";
 import ResponsesModal from "./components/ResponsesModal";
 import "./scss/App.scss";
@@ -16,17 +24,16 @@ export default function App() {
 	const [responses, setResponses] = useState([]);
 	const [showResponses, setShowResponses] = useState(false);
 
-	function addResponse(response) {
-		setResponses([...responses, response]);
-	}
-
-	function closeResponses() {
-		setShowResponses(false);
-	}
+	// function addResponse(response) {
+	// 	setResponses([...responses, response]);
+	// }
 
 	return (
 		<div className="App">
-			<MeetingForm onSubmit={addResponse} />
+			<Header />
+			<MeetingForm
+				onSubmit={(response) => setResponses([...responses, response])}
+			/>
 			<button
 				className="btn show-responses-btn"
 				onClick={() => setShowResponses(true)}
@@ -36,7 +43,7 @@ export default function App() {
 			<ResponsesModal
 				responses={responses}
 				showResponses={showResponses}
-				onClose={closeResponses}
+				onClose={() => setShowResponses(false)}
 			/>
 		</div>
 	);

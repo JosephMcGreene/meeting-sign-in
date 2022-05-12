@@ -5,7 +5,7 @@
 	width: fit-content;
 	margin: 0.5rem auto;
 
-	.name-and-email {
+	.personal-info {
 		@include flex(column);
 		max-width: fit-content;
 		margin: 0.25rem auto;
@@ -24,6 +24,10 @@
 		@include flex(column);
 		margin-top: 0.75rem;
 
+		&:focus {
+			@include onFocus();
+		}
+
 		.rating-select {
 			@include border();
 			margin-top: 0.2rem;
@@ -37,13 +41,17 @@
 				@include onFocus();
 			}
 		}
+	}
 
-		.textarea {
+	.textarea {
+		@include flex(column);
+		max-width: fit-content;
+		margin: 0.75rem auto;
+
+		textarea {
+			@include border();
 			padding: $padding;
-
-			&:focus {
-				@include onFocus();
-			}
+			margin-top: 0.2rem;
 		}
 	}
 
