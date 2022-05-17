@@ -7,17 +7,25 @@ export default function ResponsesModal({ responses, showResponses, onClose }) {
 		<div className="modal">
 			<div className="modal-content">
 				<div className="modal-header" onClick={() => onClose()}>
-					<button className="close-btn">&times;</button>
+					<button className="close-x">&times;</button>
 				</div>
 				<ul className="responses-ul modal-body">
 					{responses.length > 0 ? (
 						responses.map((response) => {
 							return (
-								<li className="response-li" key={responses.indexOf(response)}>
+								<li
+									className="response-li"
+									key={
+										response.name +
+										response.business +
+										response.personal +
+										response.relationships
+									}
+								>
 									<p className="response-p">
-										<strong>Name</strong>
+										{/* <strong>Name</strong> */}
+										<em>{response.name}:</em>
 										<br />
-										{response.name}
 									</p>
 									<p className="response-p">
 										<strong>Business</strong> <br />
@@ -32,10 +40,12 @@ export default function ResponsesModal({ responses, showResponses, onClose }) {
 										{response.relationships}
 									</p>
 									<p className="response-p">
-										<strong>[Something]</strong> <br />
+										<strong>Today's Issue</strong> <br />
+										{response.monthlyIssue}
 									</p>
 									<p className="response-p">
-										<strong>[Something]</strong> <br />
+										<strong>Goal Before Next Meeting</strong> <br />
+										{response.monthlyGoal}
 									</p>
 								</li>
 							);

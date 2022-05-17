@@ -24,10 +24,6 @@ export default function App() {
 	const [responses, setResponses] = useState([]);
 	const [showResponses, setShowResponses] = useState(false);
 
-	// function addResponse(response) {
-	// 	setResponses([...responses, response]);
-	// }
-
 	return (
 		<div className="App">
 			<Header />

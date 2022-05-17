@@ -18,7 +18,8 @@ export default function MeetingForm({ onSubmit }) {
 				business: "",
 				personal: "",
 				relationships: "",
-				monthlyResponse: "",
+				monthlyIssue: "",
+				monthlyGoal: "",
 			}}
 			validationSchema={Yup.object({
 				name: Yup.string().required("Name is required"),
@@ -28,7 +29,8 @@ export default function MeetingForm({ onSubmit }) {
 				business: Yup.number().required("Don't forget this one!"),
 				personal: Yup.number().required("Don't forget this one!"),
 				relationships: Yup.number().required("Don't forget this one!"),
-				monthlyResponse: Yup.string().required("Don't forget this one!"),
+				monthlyIssue: Yup.string().required("Don't forget this one!"),
+				monthlyGoal: Yup.string().required("Don't forget this one!"),
 			})}
 			onSubmit={(values, actions) => {
 				setTimeout(() => {
@@ -88,8 +90,14 @@ export default function MeetingForm({ onSubmit }) {
 					})}
 				</Select>
 				<InputField
-					label="(1) Issue to process today, (2) Goal before next meeting"
-					name="monthlyResponse"
+					label="Issue to process today:"
+					name="monthlyIssue"
+					type="textarea"
+					className="textarea"
+				/>
+				<InputField
+					label="Goal before next meeting:"
+					name="monthlyGoal"
 					type="textarea"
 					className="textarea"
 				/>
