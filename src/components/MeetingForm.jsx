@@ -101,6 +101,12 @@ export default function MeetingForm({ onSubmit }) {
 					type="textarea"
 					className="textarea"
 				/>
+				<InputField
+					label="Click to change each month:"
+					name="monthlyUnique"
+					type="textarea"
+					className="textarea"
+				/>
 				<button type="submit" className="btn">
 					Submit
 				</button>
