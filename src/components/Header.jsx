@@ -1,3 +1,4 @@
+//Internal
 import logo from "../img/big-a.png";
 
 export default function Header() {

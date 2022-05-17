@@ -7,7 +7,7 @@ export default function InputField({ label, type, className, ...props }) {
 	return (
 		<div className={className}>
 			<label htmlFor={props.id || props.name}>{label}</label>
-			<Field {...field} {...props} as={type}></Field>
+			<Field {...field} {...props} as={type} />
 			{meta.touched && meta.error ? (
 				<div className="error">{meta.error}</div>
 			) : null}

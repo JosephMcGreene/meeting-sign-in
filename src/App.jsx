@@ -5,9 +5,7 @@
 // TODO (1) Add 4th and 5th questions to form (see past iterations of this project)
 // TODO    - Add a way for Kevin to edit the form each month
 // TODO (2) Clean up UX:
-// TODO 	 - Add confirmation that form submitted				\
-// TODO 	 																								Maybe use Formik's built-in useFormik() hook to gather meta data about whether or not the form is submitted?
-// TODO 	 - Stop user from submitting more than once		/
+// TODO 	 - Stop user from submitting more than once(?)
 // TODO 	 - Add some animations(?)
 // TODO (3) Add a Back-End or some other way to have data persist
 
