@@ -33,78 +33,96 @@ export default function MeetingForm({ onSubmit }) {
 				monthlyGoal: Yup.string().required("Don't forget this one!"),
 			})}
 			onSubmit={(values, actions) => {
+				// // alert(JSON.stringify(values, null, 2));
+				// onSubmit(values);
+				// actions.setSubmitting(false);
+
 				setTimeout(() => {
 					// alert(JSON.stringify(values, null, 2));
 					onSubmit(values);
 					actions.setSubmitting(false);
-				});
+				}, 300);
 			}}
 		>
-			<Form className="form">
-				<InputField
-					label="Name:"
-					name="name"
-					type="input"
-					className="personal-info"
-				/>
-				<Select
-					label="How is your business?"
-					name="business"
-					className="rating"
-				>
-					<option value="">-- Select a Rating --</option>
-					{ratings.map((rating) => {
-						return (
-							<option value={rating} key={`b${rating}`}>
-								{rating}
-							</option>
-						);
-					})}
-				</Select>
-				<Select
-					label="How is your personal health?"
-					name="personal"
-					className="rating"
-				>
-					<option value="">-- Select a Rating --</option>
-					{ratings.map((rating) => {
-						return (
-							<option value={rating} key={`p${rating}`}>
-								{rating}
-							</option>
-						);
-					})}
-				</Select>
-				<Select
-					label="How are your relationships?"
-					name="relationships"
-					className="rating"
-				>
-					<option value="">-- Select a Rating --</option>
-					{ratings.map((rating) => {
-						return (
-							<option value={rating} key={`r${rating}`}>
-								{rating}
-							</option>
-						);
-					})}
-				</Select>
-				<InputField
-					label="Issue to process today:"
-					name="monthlyIssue"
-					type="textarea"
-					className="textarea"
-				/>
-				<InputField
-					label="Goal before next meeting:"
-					name="monthlyGoal"
-					type="textarea"
-					className="textarea"
-				/>
-				<button type="submit" className="btn">
-					Submit
-				</button>
-			</Form>
+			{({ isSubmitting, submitCount }) => (
+				<Form className="form">
+					<InputField
+						label="Name:"
+						name="name"
+						type="input"
+						className="personal-info"
+					/>
+
+					<Select
+						label="How is your business?"
+						name="business"
+						className="rating"
+					>
+						<option value="">-- Select a Rating --</option>
+						{ratings.map((rating) => {
+							return (
+								<option value={rating} key={`b${rating}`}>
+									{rating}
+								</option>
+							);
+						})}
+					</Select>
+
+					<Select
+						label="How is your personal health?"
+						name="personal"
+						className="rating"
+					>
+						<option value="">-- Select a Rating --</option>
+						{ratings.map((rating) => {
+							return (
+								<option value={rating} key={`p${rating}`}>
+									{rating}
+								</option>
+							);
+						})}
+					</Select>
+
+					<Select
+						label="How are your relationships?"
+						name="relationships"
+						className="rating"
+					>
+						<option value="">-- Select a Rating --</option>
+						{ratings.map((rating) => {
+							return (
+								<option value={rating} key={`r${rating}`}>
+									{rating}
+								</option>
+							);
+						})}
+					</Select>
+
+					<InputField
+						label="Issue to process today:"
+						name="monthlyIssue"
+						type="textarea"
+						className="textarea"
+					/>
+
+					<InputField
+						label="Goal before next meeting:"
+						name="monthlyGoal"
+						type="textarea"
+						className="textarea"
+					/>
+
+					<button type="submit" className="btn">
+						{isSubmitting ? "Submitting..." : "Submit"}
+					</button>
+
+					{submitCount >= 1 ? (
+						<span className="submit-confirmation">Got it, thanks!</span>
+					) : (
+						""
+					)}
+				</Form>
+			)}
 		</Formik>
 	);
 }

@@ -1,13 +1,15 @@
 @use "../abstracts/index" as *;
 
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
 .form {
 	@include flex(column);
 	border-radius: 10px;
 	width: fit-content;
 	margin: 0.75rem auto;
 	padding-top: 10px;
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 30px;
+	padding-right: 30px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 	.personal-info {
@@ -60,6 +62,12 @@
 			padding: $padding;
 			margin-top: 0.15rem;
 		}
+	}
+
+	.submit-confirmation {
+		font-family: "Audiowide", cursive;
+		text-align: center;
+		margin-bottom: 1rem;
 	}
 
 	.error {
