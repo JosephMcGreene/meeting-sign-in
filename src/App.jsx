@@ -16,7 +16,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import MeetingForm from "./components/MeetingForm";
 import Responses from "./components/Responses";
-import ResponsesModal from "./components/ResponsesModal";
+// import Modal from "./components/Modal";
 import "./scss/App.scss";
 
 export default function App() {

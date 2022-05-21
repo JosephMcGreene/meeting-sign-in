@@ -10,7 +10,8 @@ export default function Responses({ responses }) {
 								response.name +
 								response.business +
 								response.personal +
-								response.relationships
+								response.relationships +
+								response.priority
 							}
 						>
 							<p className="response-p">
@@ -33,6 +34,10 @@ export default function Responses({ responses }) {
 							<p className="response-p">
 								<strong>Today's Issue</strong> <br />
 								{response.monthlyIssue}
+							</p>
+							<p className="response-p">
+								<strong>Priority</strong> <br />
+								{response.priority}
 							</p>
 							<p className="response-p">
 								<strong>Goal Before Next Meeting</strong> <br />

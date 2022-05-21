@@ -1,7 +1,7 @@
 //Internal
 // import editPencil from "../img/pencil-alt-solid.svg";
 import InputField from "./InputField";
-// import Select from "./Select";
+import Select from "./Select";
 
 //External
 import { Formik, Form } from "formik";
@@ -19,6 +19,7 @@ export default function MeetingForm({ onSubmit }) {
 				personal: 0,
 				relationships: 0,
 				monthlyIssue: "",
+				priority: "",
 				monthlyGoal: "",
 			}}
 			validationSchema={Yup.object({
@@ -30,6 +31,7 @@ export default function MeetingForm({ onSubmit }) {
 				personal: Yup.number().required("Don't forget this one!"),
 				relationships: Yup.number().required("Don't forget this one!"),
 				monthlyIssue: Yup.string().required("Don't forget this one!"),
+				priority: Yup.string().required("Don't forget this one!"),
 				monthlyGoal: Yup.string().required("Don't forget this one!"),
 			})}
 			onSubmit={(values, actions) => {
@@ -134,6 +136,15 @@ export default function MeetingForm({ onSubmit }) {
 						as="textarea"
 						className="textarea"
 					/>
+
+					<Select label="Priority:" name="priority" className="rating">
+						<option value="">-- Select a Priority --</option>
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="Question">Question</option>
+						<option value="Lightning">Lightning</option>
+					</Select>
 
 					<InputField
 						label="Goal before next meeting:"

@@ -1,4 +1,4 @@
-export default function ResponsesModal({ responses, showResponses, onClose }) {
+export default function Modal({ responses, showResponses, onClose }) {
 	if (!showResponses) {
 		return null;
 	}
