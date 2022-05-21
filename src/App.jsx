@@ -15,12 +15,13 @@ import { useState } from "react";
 //Internal
 import Header from "./components/Header";
 import MeetingForm from "./components/MeetingForm";
+import Responses from "./components/Responses";
 import ResponsesModal from "./components/ResponsesModal";
 import "./scss/App.scss";
 
 export default function App() {
 	const [responses, setResponses] = useState([]);
-	const [showResponses, setShowResponses] = useState(false);
+	// const [showModal, setShowModal] = useState(false);
 
 	return (
 		<div className="App">
@@ -28,17 +29,12 @@ export default function App() {
 			<MeetingForm
 				onSubmit={(response) => setResponses([...responses, response])}
 			/>
-			<button
-				className="btn show-responses-btn"
-				onClick={() => setShowResponses(true)}
-			>
-				Show Responses
-			</button>
-			<ResponsesModal
+			<Responses responses={responses} />
+			{/* <ResponsesModal
 				responses={responses}
 				showResponses={showResponses}
 				onClose={() => setShowResponses(false)}
-			/>
+			/> */}
 		</div>
 	);
 }
