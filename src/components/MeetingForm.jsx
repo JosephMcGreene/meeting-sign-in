@@ -131,14 +131,14 @@ export default function MeetingForm({ onSubmit }) {
 					<InputField
 						label="Issue to process today:"
 						name="monthlyIssue"
-						type="textarea"
+						as="textarea"
 						className="textarea"
 					/>
 
 					<InputField
 						label="Goal before next meeting:"
 						name="monthlyGoal"
-						type="textarea"
+						as="textarea"
 						className="textarea"
 					/>
 
