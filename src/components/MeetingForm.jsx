@@ -1,23 +1,23 @@
 //Internal
 // import editPencil from "../img/pencil-alt-solid.svg";
 import InputField from "./InputField";
-import Select from "./Select";
+// import Select from "./Select";
 
 //External
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 export default function MeetingForm({ onSubmit }) {
-	const ratings = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	// const ratings = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 	return (
 		<Formik
 			initialValues={{
 				// element's name attribute must match this name:
 				name: "",
-				business: "",
-				personal: "",
-				relationships: "",
+				business: 0,
+				personal: 0,
+				relationships: 0,
 				monthlyIssue: "",
 				monthlyGoal: "",
 			}}
@@ -53,7 +53,37 @@ export default function MeetingForm({ onSubmit }) {
 						className="personal-info"
 					/>
 
-					<Select
+					<InputField
+						label="How is your business?"
+						name="business"
+						as="input"
+						type="range"
+						min={0}
+						max={10}
+						className="rating"
+					/>
+
+					<InputField
+						label="How is your personal health?"
+						name="personal"
+						as="input"
+						type="range"
+						min={0}
+						max={10}
+						className="rating"
+					/>
+
+					<InputField
+						label="How are your relationships?"
+						name="relationships"
+						as="input"
+						type="range"
+						min={0}
+						max={10}
+						className="rating"
+					/>
+
+					{/* <Select
 						label="How is your business?"
 						name="business"
 						className="rating"
@@ -96,7 +126,7 @@ export default function MeetingForm({ onSubmit }) {
 								</option>
 							);
 						})}
-					</Select>
+					</Select> */}
 
 					<InputField
 						label="Issue to process today:"
