@@ -12,36 +12,36 @@ require("./models/User");
 require("./services/passport");
 
 //Important Variables
-const endpoint = "https://www.coachaccountable.com/API/";
-const coachID = 11379; //Kevin's coach ID
-const josephID = 87337;
+// const endpoint = "https://www.coachaccountable.com/API/";
+// const coachID = 11379; //Kevin's coach ID
+// const josephID = 87337;
 
 //CoachAccountable Params and fetch Options
-const params = {
-	APIID: keys.coachAccountableID,
-	APIKey: keys.coachAccountableKey,
-	a: "Client.getAll",
-	includeInactive: false,
-	CoachID: 11379,
-	CompanyID: "",
-	sortOption: "C",
-};
-const options = {
-	method: "post",
-	url: endpoint,
-	params: params,
-};
+// const params = {
+// 	APIID: keys.coachAccountableID,
+// 	APIKey: keys.coachAccountableKey,
+// 	a: "Client.getAll",
+// 	includeInactive: false,
+// 	CoachID: 11379,
+// 	CompanyID: "",
+// 	sortOption: "C",
+// };
+// const options = {
+// 	method: "post",
+// 	url: endpoint,
+// 	params: params,
+// };
 
-app.get(["/whatever"], (req, res) => {
-	axios
-		.request(options)
-		.then((response) => {
-			console.log(response.data);
-		})
-		.catch((error) => {
-			console.error(error.message);
-		});
-});
+// app.get(["/whatever"], (req, res) => {
+// 	axios
+// 		.request(options)
+// 		.then((response) => {
+// 			console.log(response.data);
+// 		})
+// 		.catch((error) => {
+// 			console.error(error.message);
+// 		});
+// });
 
 mongoose.connect(keys.mongoURI);
 
