@@ -13,8 +13,6 @@ require("./services/passport");
 
 //Important Variables
 // const endpoint = "https://www.coachaccountable.com/API/";
-// const coachID = 11379; //Kevin's coach ID
-// const josephID = 87337;
 
 //CoachAccountable Params and fetch Options
 // const params = {
@@ -22,7 +20,7 @@ require("./services/passport");
 // 	APIKey: keys.coachAccountableKey,
 // 	a: "Client.getAll",
 // 	includeInactive: false,
-// 	CoachID: 11379,
+// 	CoachID: keys.kevinCoachID,
 // 	CompanyID: "",
 // 	sortOption: "C",
 // };
@@ -53,10 +51,12 @@ app.use(
 		keys: [keys.cookieKey],
 	})
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-	console.log(`Server is listening at https://localhost:${PORT}`);
+	console.log(`Server is listening at http://localhost:${PORT}/auth/google`);
 });
