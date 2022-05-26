@@ -39,7 +39,7 @@ passport.use(
 					})
 						.save()
 						.then((user) => done(null, user));
-					// the save() method is what actually saves something into MongoDB
+					// the save() method is what *actually* saves something into MongoDB
 				}
 			});
 		}
