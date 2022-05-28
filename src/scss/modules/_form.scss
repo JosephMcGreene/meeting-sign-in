@@ -6,6 +6,7 @@
 
 .form {
 	@include flex(column);
+	font-family: $main-font;
 	border-radius: 10px;
 	width: fit-content;
 	margin: 0.75rem auto;
@@ -80,6 +81,7 @@
 
 			option {
 				text-align: center;
+				font-family: $main-font;
 			}
 
 			&:focus {

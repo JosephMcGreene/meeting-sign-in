@@ -10,6 +10,10 @@
 	padding: 0;
 }
 
+*::selection {
+	background-color: $advizot-light;
+}
+
 :root {
 	font-size: 16px;
 }
