@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/meeting-sign-in/static/css/main.817cd884.css",
+    "main.css": "/meeting-sign-in/static/css/main.076c3963.css",
     "main.js": "/meeting-sign-in/static/js/main.f6c57850.js",
     "static/js/787.4da0514e.chunk.js": "/meeting-sign-in/static/js/787.4da0514e.chunk.js",
     "static/media/big-a.png": "/meeting-sign-in/static/media/big-a.fa0a0e8c2b09600f321b.png",
+    "static/media/Sansation-Regular-webfont.woff": "/meeting-sign-in/static/media/Sansation-Regular-webfont.18a2f25d3a6f2f6077e0.woff",
     "index.html": "/meeting-sign-in/index.html",
-    "main.817cd884.css.map": "/meeting-sign-in/static/css/main.817cd884.css.map",
+    "main.076c3963.css.map": "/meeting-sign-in/static/css/main.076c3963.css.map",
     "main.f6c57850.js.map": "/meeting-sign-in/static/js/main.f6c57850.js.map",
     "787.4da0514e.chunk.js.map": "/meeting-sign-in/static/js/787.4da0514e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.817cd884.css",
+    "static/css/main.076c3963.css",
     "static/js/main.f6c57850.js"
   ]
 }
