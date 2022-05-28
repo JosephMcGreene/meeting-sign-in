@@ -20,6 +20,7 @@
 
 .header {
 	font-family: "Audiowide", cursive;
+	letter-spacing: 1px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -46,6 +47,8 @@
 	cursor: pointer;
 	font-weight: bold;
 	font-family: "Audiowide", cursive;
+	font-size: 1rem;
+	letter-spacing: 0.5px;
 
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 
