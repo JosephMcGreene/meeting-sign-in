@@ -29,7 +29,43 @@
 		}
 	}
 
-	.rating {
+	.range-container {
+		position: relative;
+
+		.rating {
+			@include flex(column);
+			margin-top: 0.75rem;
+
+			&:focus {
+				@include onFocus();
+			}
+
+			.rating-select {
+				@include border();
+				margin-top: 0.15rem;
+				padding: $padding;
+
+				option {
+					text-align: center;
+				}
+
+				&:focus {
+					@include onFocus();
+				}
+			}
+		}
+
+		.rangeValue {
+			position: absolute;
+			left: 88%;
+			top: 35px;
+			display: block;
+			width: 12%;
+			text-align: right;
+		}
+	}
+
+	.priority {
 		@include flex(column);
 		margin-top: 0.75rem;
 

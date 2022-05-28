@@ -8,7 +8,11 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 export default function MeetingForm({ onSubmit }) {
-	// const ratings = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	function getSliderBGSize(value) {
+		return {
+			backgroundSize: `${(value * 100) / 10}% 100%`,
+		};
+	}
 
 	return (
 		<Formik
@@ -46,89 +50,57 @@ export default function MeetingForm({ onSubmit }) {
 				}, 300);
 			}}
 		>
-			{({ isSubmitting, submitCount }) => (
+			{({ isSubmitting, submitCount, ...props }) => (
 				<Form className="form">
 					<InputField
 						label="Name:"
 						name="name"
+						as="input"
 						type="input"
 						className="personal-info"
 					/>
 
-					<InputField
-						label="How is your business?"
-						name="business"
-						as="input"
-						type="range"
-						min={0}
-						max={10}
-						className="rating"
-					/>
+					<div className="range-container">
+						<InputField
+							label="How is your business?"
+							name="business"
+							as="input"
+							type="range"
+							min={0}
+							max={10}
+							className="rating"
+							style={getSliderBGSize(props.values.business)}
+						/>
+						<span className="rangeValue">{props.values.business}</span>
+					</div>
 
-					<InputField
-						label="How is your personal health?"
-						name="personal"
-						as="input"
-						type="range"
-						min={0}
-						max={10}
-						className="rating"
-					/>
+					<div className="range-container">
+						<InputField
+							label="How is your health?"
+							name="personal"
+							as="input"
+							type="range"
+							min={0}
+							max={10}
+							className="rating"
+							style={getSliderBGSize(props.values.personal)}
+						/>
+						<span className="rangeValue">{props.values.personal}</span>
+					</div>
 
-					<InputField
-						label="How are your relationships?"
-						name="relationships"
-						as="input"
-						type="range"
-						min={0}
-						max={10}
-						className="rating"
-					/>
-
-					{/* <Select
-						label="How is your business?"
-						name="business"
-						className="rating"
-					>
-						<option value="">-- Select a Rating --</option>
-						{ratings.map((rating) => {
-							return (
-								<option value={rating} key={`b${rating}`}>
-									{rating}
-								</option>
-							);
-						})}
-					</Select>
-
-					<Select
-						label="How is your personal health?"
-						name="personal"
-						className="rating"
-					>
-						<option value="">-- Select a Rating --</option>
-						{ratings.map((rating) => {
-							return (
-								<option value={rating} key={`p${rating}`}>
-									{rating}
-								</option>
-							);
-						})}
-					</Select>
-
-					<Select
-						label="How are your relationships?"
-						name="relationships"
-						className="rating"
-					>
-						<option value="">-- Select a Rating --</option>
-						{ratings.map((rating) => {
-							return (
-								<option value={rating} key={`r${rating}`}>
-									{rating}
-								</option>
-							);
-						})}
-					</Select> */}
+					<div className="range-container">
+						<InputField
+							label="How are your relationships?"
+							name="relationships"
+							as="input"
+							type="range"
+							min={0}
+							max={10}
+							className="rating"
+							style={getSliderBGSize(props.values.relationships)}
+						/>
+						<span className="rangeValue">{props.values.relationships}</span>
+					</div>
 
 					<InputField
 						label="Issue to process today:"
@@ -137,7 +109,7 @@ export default function MeetingForm({ onSubmit }) {
 						className="textarea"
 					/>
 
-					<Select label="Priority:" name="priority" className="rating">
+					<Select label="Priority:" name="priority" className="priority">
 						<option value="">-- Select a Priority --</option>
 						<option value="A">A</option>
 						<option value="B">B</option>
