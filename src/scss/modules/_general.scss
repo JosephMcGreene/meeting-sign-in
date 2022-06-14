@@ -50,7 +50,8 @@
 	font-size: 1rem;
 	letter-spacing: 0.5px;
 
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	box-shadow: inset -1px -1px 7px rgba(0, 0, 0, 0.8),
+		inset 1px 1px 7px rgba(255, 255, 255, 0.9), 0 0 10px rgba(0, 0, 0, 0.3);
 
 	&:focus {
 		@include onFocus();

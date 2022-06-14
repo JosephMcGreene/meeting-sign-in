@@ -18,11 +18,15 @@
 	.personal-info {
 		@include flex(column);
 		max-width: fit-content;
-		margin: 0.25rem auto;
+		margin-top: 0.25rem;
+		margin-bottom: 1rem;
+		margin-left: auto;
+		margin-right: auto;
 
 		input {
 			@include border;
 			padding: $padding;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 			&:focus {
 				@include onFocus();
@@ -35,7 +39,12 @@
 
 		.rating {
 			@include flex(column);
-			margin-top: 0.75rem;
+			// text-shadow: 0 0 5px black;
+			margin-bottom: 1rem;
+
+			label {
+				margin-bottom: 0.25rem;
+			}
 
 			&:focus {
 				@include onFocus();
@@ -59,7 +68,7 @@
 		.rangeValue {
 			position: absolute;
 			left: 88%;
-			top: 35px;
+			top: 47%;
 			display: block;
 			width: 12%;
 			text-align: right;
@@ -78,6 +87,7 @@
 			@include border();
 			margin-top: 0.15rem;
 			padding: $padding;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 			option {
 				text-align: center;
@@ -101,6 +111,7 @@
 			@include border();
 			padding: $padding;
 			margin-top: 0.15rem;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 		}
 	}
 
