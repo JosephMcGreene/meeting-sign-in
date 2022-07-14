@@ -23,13 +23,33 @@ import "./scss/App.scss";
 export default function App() {
 	const [responses, setResponses] = useState([]);
 
+	// return (
+	// 	<div className="App">
+	// 		<Header />
+	// 		<MeetingForm
+	// 			onSubmit={(response) => setResponses([...responses, response])}
+	// 		/>
+	// 		<Responses responses={responses} />
+	// 	</div>
+	// );
+
 	return (
 		<div className="App">
-			<Header />
-			<MeetingForm
-				onSubmit={(response) => setResponses([...responses, response])}
-			/>
-			<Responses responses={responses} />
+			<header className="App-header">
+				<p>A simple React app.....</p>
+
+				<a
+					className="App-link"
+					href="https://reactjs.org"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Learn React
+				</a>
+				<form action="../../post" method="post" className="form">
+					<button type="submit">Connected?</button>
+				</form>
+			</header>
 		</div>
 	);
 }
