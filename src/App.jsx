@@ -3,18 +3,13 @@
 // !    - Secure Server Sign-In
 // !    - Answers to sign-in questions to be used during the course of the meeting via a projector
 // !    - POST data to Coach Accountable to be stored as a metric for user later on
-// TODO (1) Add 4th and 5th questions to form (see past iterations of this project)
-// TODO    - Add a way for Kevin to edit the form each month
+// TODO (1) Add a way for Kevin to edit the form each month
 // TODO (2) Clean up UX:
-// TODO 	 - Change the font of the user input on text and textarea elements
 // TODO 	 - Change the font of the user input on Responses component
 // TODO 	 - Format Responses component to display info properly, helpfully, and aesthetically
 // TODO 	 - Add some animations(?)
 // TODO (3) Add a Back-End or some other way to have data persist
 // TODO    - POST data to Coach Accountable. See what Kevin thinks about that. Add ability to remove the data as well.
-// TODO       > See server/routes/coachRoutes.js
-// TODO       > Need to use coachRoutes as a proxy server to POST data to CoachAccountable when user hits <Form>'s submit button
-// TODO          ~ ...which means I also need to authenticate the users somehow. Maybe utilize the CA API to Client.getAll and compare user info to what is on that master json object?
 
 //React
 import { useState } from "react";
