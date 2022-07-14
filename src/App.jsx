@@ -23,33 +23,45 @@ import "./scss/App.scss";
 export default function App() {
 	const [responses, setResponses] = useState([]);
 
-	// return (
-	// 	<div className="App">
-	// 		<Header />
-	// 		<MeetingForm
-	// 			onSubmit={(response) => setResponses([...responses, response])}
-	// 		/>
-	// 		<Responses responses={responses} />
-	// 	</div>
-	// );
+	async function submitResponses(response) {
+		setResponses([...responses, response]);
+
+		const serverRes = await fetch("../../../post", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(response),
+		});
+		const json = await serverRes.json();
+		console.log(json);
+	}
 
 	return (
 		<div className="App">
-			<header className="App-header">
-				<p>A simple React app.....</p>
-
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-				<form action="../../post" method="post" className="form">
-					<button type="submit">Connected?</button>
-				</form>
-			</header>
+			<Header />
+			<MeetingForm onSubmit={(response) => submitResponses(response)} />
+			<Responses responses={responses} />
 		</div>
 	);
+
+	// return (
+	// 	<div className="App">
+	// 		<header className="App-header">
+	// 			<p>A simple React app.....</p>
+
+	// 			<a
+	// 				className="App-link"
+	// 				href="https://reactjs.org"
+	// 				target="_blank"
+	// 				rel="noopener noreferrer"
+	// 			>
+	// 				Learn React
+	// 			</a>
+	// 			<form action="../../post" method="post" className="form">
+	// 				<button type="submit">Connected?</button>
+	// 			</form>
+	// 		</header>
+	// 	</div>
+	// );
 }
