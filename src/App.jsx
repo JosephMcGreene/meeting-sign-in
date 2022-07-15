@@ -15,7 +15,7 @@
 import { useState } from "react";
 
 //Internal
-import Header from "./components/Header";
+import logo from "./img/big-a.png";
 import MeetingForm from "./components/MeetingForm";
 import Responses from "./components/Responses";
 import "./scss/App.scss";
@@ -26,20 +26,22 @@ export default function App() {
 	async function submitResponses(response) {
 		setResponses([...responses, response]);
 
-		const serverRes = await fetch("../../../post", {
+		const serverResponse = await fetch("../../../post", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(response),
 		});
-		const json = await serverRes.json();
-		console.log(json);
+		const json = await serverResponse.json();
 	}
 
 	return (
 		<div className="App">
-			<Header />
+			<header className="header">
+				<img src={logo} alt="Advizot logo" className="logo" />
+				<h1 className="h1">Welcome!</h1>
+			</header>
 			<MeetingForm onSubmit={(response) => submitResponses(response)} />
 			<Responses responses={responses} />
 		</div>
