@@ -23,15 +23,15 @@ import "./scss/App.scss";
 export default function App() {
 	const [responses, setResponses] = useState([]);
 
-	async function submitResponses(response) {
-		setResponses([...responses, response]);
+	async function submitResponses(userResponse) {
+		setResponses([...responses, userResponse]);
 
 		const serverResponse = await fetch("../../../post", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(response),
+			body: JSON.stringify(userResponse),
 		});
 		const json = await serverResponse.json();
 	}
@@ -42,7 +42,7 @@ export default function App() {
 				<img src={logo} alt="Advizot logo" className="logo" />
 				<h1 className="h1">Welcome!</h1>
 			</header>
-			<MeetingForm onSubmit={(response) => submitResponses(response)} />
+			<MeetingForm onSubmit={(userResponse) => submitResponses(userResponse)} />
 			<Responses responses={responses} />
 		</div>
 	);
