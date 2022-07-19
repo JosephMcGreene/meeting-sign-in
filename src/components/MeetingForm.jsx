@@ -17,7 +17,6 @@ export default function MeetingForm({ onSubmit }) {
 	return (
 		<Formik
 			initialValues={{
-				// element's name attribute must match this name:
 				name: "",
 				business: 0,
 				personal: 0,
@@ -36,15 +35,10 @@ export default function MeetingForm({ onSubmit }) {
 				monthlyGoal: Yup.string().required("Don't forget this one!"),
 			})}
 			onSubmit={(values, actions) => {
-				// // alert(JSON.stringify(values, null, 2));
-				// onSubmit(values);
-				// actions.setSubmitting(false);
-
 				setTimeout(() => {
-					// alert(JSON.stringify(values, null, 2));
 					onSubmit(values);
 					actions.setSubmitting(false);
-				}, 300);
+				}, 0);
 			}}
 		>
 			{({ isSubmitting, submitCount, ...props }) => (
